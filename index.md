@@ -25,3 +25,4 @@
 * Built and ran my own websites
 * Spent copious amounts of time customizing a Gentoo Linux system
 
+![Parasitic Anticline](/parasiticanticline.jpg)
