@@ -5,8 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.4">
-<meta name="author" content="Helena, Montana">
-<title>Kim Warhank</title>
+<title>Running Photoshop 7.0 on Gentoo Linux With WINE</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -420,107 +419,140 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Kim Warhank</h1>
-<div class="details">
-<span id="author" class="author">Helena, Montana</span><br>
-<span id="revdate">kwarhank@outlook.com</span>
-</div>
+<h1>Running Photoshop 7.0 on Gentoo Linux With WINE</h1>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_projects">Projects</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://kimwarhank.github.io/chemistry.html">Quantitative Analysis for Phosphorus in Plant Food - Lab report for freshman Chemistry (2002)</a></p>
-</li>
-<li>
-<p><a href="https://kimwarhank.github.io/pspgentoo.html">Running Photoshop 7.0 in Gentoo Linux Using WINE (2003)</a></p>
-</li>
-<li>
-<p>User guide for accessing the campus "MyPortal". (2005)</p>
-</li>
-<li>
-<p>Paper for MSU Bozeman GEOL 315 - Structural Geology (2005)</p>
-</li>
-<li>
-<p>Paper for MSU Bozeman ANTH 440 - Special Problems (2006)</p>
-</li>
-<li>
-<p>Exploring Raspberry Pi for a new to Linux user (2018)</p>
-</li>
-<li>
-<p>Fictional email to end users regarding a security breach (2018)</p>
-</li>
-<li>
-<p>Charlotte Mason&#8217;s educational philosophy for new home educators (2018)</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_skills_and_abilities">Skills and Abilities</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Slack</p>
-</li>
-<li>
-<p>WordPress</p>
-</li>
-<li>
-<p>AsciiDocs</p>
-</li>
-<li>
-<p>HTML</p>
-</li>
-<li>
-<p>CSS</p>
-</li>
-<li>
-<p>Linux</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Ubuntu</p>
-</li>
-<li>
-<p>Gentoo</p>
-</li>
-<li>
-<p>Raspbian</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Windows</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_education">Education</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p><strong>May 2008 - Montana State University - Bozeman</strong><br>
-Bachelor of Science - Earth Science<br>
-Minor - Anthropology</p>
+<p>This was something I wrote for myself to remember how to run Photoshop 7.0 under WINE on Gentoo. I may have intended for this to be posted online but it never made it there.
+I have attached the <a href="http://kimwarhank.github.io/pspgentoo.pdf">PDF</a> of my how-to guide; but reformatted it below for online viewing.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><em>Needed:</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A copy of Photoshop 7.0</p>
+</li>
+<li>
+<p>The WINE Windows Emulator</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p><strong>May 2000 - Charles M. Russell High School</strong><br>
-High School Diploma</p>
+<p>To begin:
+Make sure the newest version of WINE is installed. If you&#8217;re using Gentoo Linux, the following commands can be done to check if you have WINE installed, and what version is available if you don&#8217;t:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code># emerge -Uup wine
+# emerge -Uu wine</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>If you&#8217;re using a different distribution, you&#8217;re on your own. Freshmeat.net has WINE available in many different formants, you should be able to find your needed format (tarball, RPM, etc) there.</p>
+</div>
+<div class="paragraph">
+<p>After WINE is installed:
+As your user, run the Photoshop.exe using WINE:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ wine path/to/Photoshop.exe</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>I have my Photoshop in my "tools" directory, located in my /home/[user]/folder:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>kim@computer kim$ wine tools/Photoshop 7.exe</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If WINE is installed correctly, it will start making default registries, and then ask you to modify ~/.wine/config to point to the correct drives it needs to use when it sets up Windows. I&#8217;ve found that the defaults work fine for me, and haven&#8217;t needed to modify what drives it&#8217;s using.</p>
+</div>
+<div class="paragraph">
+<p>Re-run the Photoshop.exe in WINE command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>kim@computer kim$ wine tools/Photoshop 7.exe</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At this point, WINE should be loading font metrics. This may take a while, so be patient. Once it&#8217;s done with the font metrics, the WinZip self-extractor will pop up to extract Photoshop. Click "unzip" and let it do its thing.</p>
+</div>
+<div class="paragraph">
+<p>After WinZip finishes:
+Change into ~/.wine directory. Go into the Installation Files direcotry, then Photoshop 7.0, another Photoshop 7.0 direcotry, then Photoshop. ls to see what&#8217;s in there. If all is going well, there should be Setup files, possibly a text file with the serial number in it, a Readme, layouts.bin, etc. We want to run the install executable for Photoshop. SO. Run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ wine Setup.exe</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The Adobe install screen will appear and then - DENIED.</p>
+</div>
+<div class="paragraph">
+<p>Adobe will think you&#8217;re running Windows NT. Oops. To get around this, you need to mod your ~/.wine/config file to use this config in place of the default [Version], etc:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>[Version]
+; Windows version to imitate (win95,win98,winme,nt351,nt40,win2k,winxp,win20,win30,win31)
+"Windows" = "win98"
+; DOS version to imitate
+;"DOS" = "6.22"
+
+; Be careful here, wrong DllOverrides settings have the potential
+; to pretty much kill your setup.
+[DllOverrides]
+; some dlls you may want to change
+"oleaut32"     = "builtin, native"
+"ole32"        = "builtin, native"
+"commdlg"      = "builtin, native"
+"comdlg32"     = "builtin, native"
+"shell"        = "builtin, native"
+"shell32"      = "builtin, native"
+"shfolder"     = "builtin, native"
+"shlwapi"      = "builtin, native"
+"shdocvw"      = "builtin, native"
+"advapi32"     = "builtin, native"
+"msvcrt"       = "native, builtin"
+"mciavi.drv"   = "native, builtin"
+"mcianim.drv"  = "native, builtin"
+; you can specify applications too
+; this one will apply for all notepad.exe
+;"*notepad.exe" = "native, builtin"
+; this one will apply only for a particular file
+;"C:\\windows\\regedit.exe" = "native, builtin"
+; default for all other dlls
+"*" = "builtin, native"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will get WINE to emulate Windows 98. (Thanks to J.Snider for sharing the above code online.)</p>
+</div>
+<div class="paragraph">
+<p>Re-run the Setup.exe, plugin your code and voila! Photoshop 7.0 on Gentoo Linux.
+Running Photoshop:
+Generically speaking, to run Photoshop you&#8217;ll need to go into ~/.wine/fake_windows/Program Files/Adobe/Photoshop 7.0 and run the Photoshop.exe under WINE to launch Photoshop. This may be different for you, or your computer. Hunt around, and figure out where it&#8217;s at. Just remember to use</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>wine Photoshop.exe</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>so Linux knows what to do.</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-08-23 14:55:33 MDT
+Last updated 2018-08-23 14:56:55 MDT
 </div>
 </div>
 </body>
